@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>how to build a blog by github and jekyll!</title>
+  <meta name="description" content="blog终于初步可以运行了，作为第一篇正式的文章，记录一下自己blog的搭建过程。   搭建环境：ubuntu14.04">
+
+  <link rel="stylesheet" href="/blog/css/main.css">
+  <link rel="canonical" href="http://daqiuqu.com/blog/jekyll/update/2015/01/27/setup-a-blog-by-github-and-jekyll.html">
+  <link rel="alternate" type="application/rss+xml" title="daqiuqu's blog" href="http://daqiuqu.com/blog/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/blog/">daqiuqu's blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/index.html">daqiuqu's blog</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">how to build a blog by github and jekyll!</h1>
+    <p class="post-meta">Jan 27, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>blog终于初步可以运行了，作为第一篇正式的文章，记录一下自己blog的搭建过程。
+   搭建环境：ubuntu14.04</p>
+
+<p>1、环境搭建和安装</p>
+
+<p>首先安装git、ruby、gem、jekyll等，可以直接apt-get install安装：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">apt-get install git
+apt-get install ruby
+apt-get install ruby-dev
+apt-get install gem</code></pre></div>
+
+<p>这时可以用 <code>ruby -v</code> 和 <code>gem -v</code> 检查一下是否安装成功，安装了什么版本。</p>
+
+<p>此时通过<code>gem sources list</code>可以查看到gem默认的源应该是<code>http://rubygems.org</code>，在中国此源速度较慢，更换为国内淘宝源，方法如下：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gem sources -a http://ruby.taobao.org
+gem sources --remove http://rubygems.org</code></pre></div>
+
+<p>即先添加国内源，再将默认的gem源移除，此时再用<code>gem sources list</code>查看源的设置是否正确。设置完成后安装jekyll：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gem install jekyll</code></pre></div>
+
+<p>同之前一样，安装完成后用<code>jekyll -v</code>检查一下是否安装成功。</p>
+
+<p>2、利用jekyll建立基本的blog</p>
+
+<p>这时安装工作基本结束，为自己的blog建立一个存放目录，<code>cd</code>到该目录之后用jekyll初始化一些基本的文件：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll new UserName</code></pre></div>
+
+<p>我这里出现错误<code>ExecJS cannot find a JavaScript runtime</code>，此时运行<code>apt-get install nodejs</code>安装Node.js解决该问题，安装后重新运行该命令即建立了一个以UserName命名的文件夹，里面包含一些初始化的文件。
+   其中<code>_layout</code>目录用于存放模板，里面有default.html和post.html两个模板；<code>_post</code>目录用于存放博客的文章，里面有一个markdown格式的文件就是我们稍后会在网站上看到的第一篇文章；而<code>_post</code>目录下的文章会在<code>_site</code>目录下生成网页。这里还需要注意一些文件，比如<code>_config.yml</code>，其中包含了一些基本的配置选项，具体内容可以参照[Jekyll官网][jekyll-config]。其它目录和文件暂不介绍。</p>
+
+<p>实际上这时候你的个人网站已经可以在本地运行，在当前的文件夹输入：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll serve</code></pre></div>
+
+<p>如果之前操作没有问题的话应该可以看到<code>server running</code>字样，此时可以直接通过http://127.0.0.1:4000/本地访问自己的网站了，是不是很容易。</p>
+
+<p>现在我们开始写自己的第一个网页，如上面所说，在<code>_post</code>目录建立一个文件，命名为<code>yy-mm-dd-titlename.markdown</code>，jekyll就会根据文章的标题来创建文件夹，基本就是<code>/yy/mm/dd/titlename.html</code>的样子，我们模仿jekyll给出的例子来写第一个网页，在<code>_post</code>文件夹下新建文件<code>2015-01-27-hello.markdown</code>，内容如下：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">---
+layout: post
+title: hello
+---
+
+HELLO WORLD!</code></pre></div>
+
+<p>刷新一下本地的网页，应该就看到我们的第一篇文章了。</p>
+
+<p>3、提交到github</p>
+
+<p>在本地的blog固然能给自己起到记录的作用，不过blog本来就是大家互相交流提高的地方。感谢github给我们提供了这样的方法，把blog托管到github之后，出色的版本控制也使我们不必害怕文章的丢失。
+   首先在jekyll目录下运行命令:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git init</code></pre></div>
+
+<p>创建一个名为gh-pages的分支：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout --orphan gh-pages</code></pre></div>
+
+<p>这里建立的分支名称必须是<code>gh-pages</code>，注意不要写错。</p>
+
+<p>之后就是本地提交和发布了，首先在本地提交：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git add .
+git commit -m <span class="s2">&quot;Blog init&quot;</span></code></pre></div>
+
+<p>首先将当前目录加入暂存区，之后本地提交第一个版本”Blog init”是第一次提交的日志，内容可以是任何你想写的东西。</p>
+
+<p>接下来上传到github：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git remote add origin https://github.com/github-user-name/blog-name.git
+git push origin gh-pages</code></pre></div>
+
+<p>这样就完成了提交，访问github-user-name.github.io应该就可以查看到刚才本地调试的网页了。</p>
+
+<p>以上就是我大概的安装过程，如果有什么错误欢迎大家指出，谢谢！</p>
+
+<p>安装过程中参考了很多前人经验，包括但不限于：<a href="http://www.worldhello.net/gotgithub/03-project-hosting/050-homepage.html">蒋鑫的博客</a>，<a href="http://segmentfault.com/blog/skyinlayer/1190000000406011">天镶的博客</a>，<a href="http://jekyllrb.com/">jekyll官网</a>，<a href="http://jason1114.github.io/articles/2013/09/11/how-to-build-a-personal-homepage-with-github-pages-and-jekyll.html">小木匠的博客</a>，谢谢大家共享的知识和提供的工具。</p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">daqiuqu's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>daqiuqu's blog</li>
+          <li><a href="mailto:daqiuqu@live.cn">daqiuqu@live.cn</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/daqiuqu">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">daqiuqu</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">This is a personal blog to record some thoughts and tec articles.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
