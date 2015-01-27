@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>daqiuqu's blog</title>
+    <description>This is a personal blog to record some thoughts and tec articles.
 </description>
-    <link>http://yourdomain.com/home/daqiuqu/blog/daqiuqu//</link>
-    <atom:link href="http://yourdomain.com/home/daqiuqu/blog/daqiuqu//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Jan 2015 22:57:05 +0800</pubDate>
-    <lastBuildDate>Mon, 26 Jan 2015 22:57:05 +0800</lastBuildDate>
+    <link>http://daqiuqu.com/blog//</link>
+    <atom:link href="http://daqiuqu.com/blog//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 27 Jan 2015 10:25:04 +0800</pubDate>
+    <lastBuildDate>Tue, 27 Jan 2015 10:25:04 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Tue, 27 Jan 2015 06:28:35 +0800</pubDate>
-        <link>http://yourdomain.com/home/daqiuqu/blog/daqiuqu//jekyll/update/2015/01/27/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/home/daqiuqu/blog/daqiuqu//jekyll/update/2015/01/27/welcome-to-jekyll.html</guid>
+        <link>http://daqiuqu.com/blog//jekyll/update/2015/01/27/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://daqiuqu.com/blog//jekyll/update/2015/01/27/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
@@ -43,8 +43,8 @@
         <description>&lt;p&gt;Hello jekyll!&lt;/p&gt;
 </description>
         <pubDate>Mon, 26 Jan 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/home/daqiuqu/blog/daqiuqu//2015/01/26/hello.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/home/daqiuqu/blog/daqiuqu//2015/01/26/hello.html</guid>
+        <link>http://daqiuqu.com/blog//2015/01/26/hello.html</link>
+        <guid isPermaLink="true">http://daqiuqu.com/blog//2015/01/26/hello.html</guid>
         
         
       </item>
