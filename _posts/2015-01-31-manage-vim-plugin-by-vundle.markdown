@@ -19,15 +19,24 @@ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 3、之后运行vim，执行:BundleInstall就可以安装.vimrc里规定的插件。
 
 vundle提供了以下几种插件安装方法：
+
   如果这是一个在github的repository的话，比如我安装的swift语法高亮插件，采用这种形式：`Bundle "toyamarinyon/vim-swift"`，这个插件应该是目前github上同类型里starred最多的。
+
   如果是一个git插件，但是没有托管在github，采用这种形式：`Bundle 'git://git.wincent.com/command-t.git'`。
+
   如果是一个本地的git插件，采用这种形式：`Bundle file:///home/gmarik/path/to/plugin`。
 
+
 vundle共提供了这几个命令：
+
   BundleInstall：安装插件
+
   BundleList:当前插件列表
+
   BundleClean:卸载不在列表中的插件
+
   BundleInstall！：更新插件
+
 运用这几个命令，就可以轻松的利用vundle管理vim插件了，插件都存放在`~/.vim/bundle/`目录下。
 
 主要参考了vundle readme和beiyuu的vimrc，谢谢贡献！

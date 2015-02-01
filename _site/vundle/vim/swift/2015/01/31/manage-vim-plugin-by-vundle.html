@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>daqiuqu's blog</title>
-  <meta name="description" content="This is a personal blog to record some thoughts and tec articles.
-">
+  <title>利用vundle管理vim插件!</title>
+  <meta name="description" content="想用vim来看swift代码，但是没有swift语法高亮，查了下可以用插件解决，而vim下管理插件的神器要数vundle了，vundle也就是vim bundle。方法其实很简单，如果没有git的话首先安装git，apt-get install git。">
 
   <link rel="stylesheet" href="/blog/css/main.css">
-  <link rel="canonical" href="http://daqiuqu.com/blog/">
+  <link rel="canonical" href="http://daqiuqu.com/blog/vundle/vim/swift/2015/01/31/manage-vim-plugin-by-vundle.html">
   <link rel="alternate" type="application/rss+xml" title="daqiuqu's blog" href="http://daqiuqu.com/blog/feed.xml" />
 </head>
 
@@ -57,47 +56,49 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">利用vundle管理vim插件!</h1>
+    <p class="post-meta">Jan 31, 2015</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 31, 2015</span>
+  <article class="post-content">
+    <p>想用vim来看swift代码，但是没有swift语法高亮，查了下可以用插件解决，而vim下管理插件的神器要数vundle了，vundle也就是vim bundle。
+方法其实很简单，如果没有git的话首先安装git，<code>apt-get install git</code>。</p>
 
-        <h2>
-          <a class="post-link" href="/blog/vundle/vim/swift/2015/01/31/manage-vim-plugin-by-vundle.html">利用vundle管理vim插件!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 27, 2015</span>
+<p>1、安装完成后从github上下载vundle：</p>
 
-        <h2>
-          <a class="post-link" href="/blog/jekyll/update/2015/01/27/setup-a-blog-by-github-and-jekyll.html">how to build a blog by github and jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 27, 2015</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code></pre></div>
 
-        <h2>
-          <a class="post-link" href="/blog/jekyll/update/2015/01/27/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 26, 2015</span>
+<p>2、接下来主要是配置.vimrc，从vundle的README.md可以看到需要的修改，修改后运行vim的时候就会首先加载.vimrc中的配置，不明白怎么配置的话可以先参考别人的，比如我参考了beiyuu的<a href="https://github.com/beiyuu/vimfiles/blob/master/_vimrc">vimrc</a>。</p>
 
-        <h2>
-          <a class="post-link" href="/blog/2015/01/26/hello.html">hello-jekyll</a>
-        </h2>
-      </li>
-    
-  </ul>
+<p>3、之后运行vim，执行:BundleInstall就可以安装.vimrc里规定的插件。</p>
 
-  <p class="rss-subscribe">subscribe <a href="/blog/feed.xml">via RSS</a></p>
+<p>vundle提供了以下几种插件安装方法：</p>
+
+<p>如果这是一个在github的repository的话，比如我安装的swift语法高亮插件，采用这种形式：<code>Bundle "toyamarinyon/vim-swift"</code>，这个插件应该是目前github上同类型里starred最多的。</p>
+
+<p>如果是一个git插件，但是没有托管在github，采用这种形式：<code>Bundle 'git://git.wincent.com/command-t.git'</code>。</p>
+
+<p>如果是一个本地的git插件，采用这种形式：<code>Bundle file:///home/gmarik/path/to/plugin</code>。</p>
+
+<p>vundle共提供了这几个命令：</p>
+
+<p>BundleInstall：安装插件</p>
+
+<p>BundleList:当前插件列表</p>
+
+<p>BundleClean:卸载不在列表中的插件</p>
+
+<p>BundleInstall！：更新插件</p>
+
+<p>运用这几个命令，就可以轻松的利用vundle管理vim插件了，插件都存放在<code>~/.vim/bundle/</code>目录下。</p>
+
+<p>主要参考了vundle readme和beiyuu的vimrc，谢谢贡献！</p>
+
+
+  </article>
 
 </div>
 

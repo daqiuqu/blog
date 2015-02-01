@@ -6,9 +6,58 @@
 </description>
     <link>http://daqiuqu.com/blog/</link>
     <atom:link href="http://daqiuqu.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Jan 2015 15:52:28 +0800</pubDate>
-    <lastBuildDate>Tue, 27 Jan 2015 15:52:28 +0800</lastBuildDate>
+    <pubDate>Sun, 01 Feb 2015 08:41:58 +0800</pubDate>
+    <lastBuildDate>Sun, 01 Feb 2015 08:41:58 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>利用vundle管理vim插件!</title>
+        <description>&lt;p&gt;想用vim来看swift代码，但是没有swift语法高亮，查了下可以用插件解决，而vim下管理插件的神器要数vundle了，vundle也就是vim bundle。
+方法其实很简单，如果没有git的话首先安装git，&lt;code&gt;apt-get install git&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;1、安装完成后从github上下载vundle：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2、接下来主要是配置.vimrc，从vundle的README.md可以看到需要的修改，修改后运行vim的时候就会首先加载.vimrc中的配置，不明白怎么配置的话可以先参考别人的，比如我参考了beiyuu的&lt;a href=&quot;https://github.com/beiyuu/vimfiles/blob/master/_vimrc&quot;&gt;vimrc&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;3、之后运行vim，执行:BundleInstall就可以安装.vimrc里规定的插件。&lt;/p&gt;
+
+&lt;p&gt;vundle提供了以下几种插件安装方法：&lt;/p&gt;
+
+&lt;p&gt;如果这是一个在github的repository的话，比如我安装的swift语法高亮插件，采用这种形式：&lt;code&gt;Bundle &quot;toyamarinyon/vim-swift&quot;&lt;/code&gt;，这个插件应该是目前github上同类型里starred最多的。&lt;/p&gt;
+
+&lt;p&gt;如果是一个git插件，但是没有托管在github，采用这种形式：&lt;code&gt;Bundle 'git://git.wincent.com/command-t.git'&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果是一个本地的git插件，采用这种形式：&lt;code&gt;Bundle file:///home/gmarik/path/to/plugin&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;vundle共提供了这几个命令：&lt;/p&gt;
+
+&lt;p&gt;BundleInstall：安装插件&lt;/p&gt;
+
+&lt;p&gt;BundleList:当前插件列表&lt;/p&gt;
+
+&lt;p&gt;BundleClean:卸载不在列表中的插件&lt;/p&gt;
+
+&lt;p&gt;BundleInstall！：更新插件&lt;/p&gt;
+
+&lt;p&gt;运用这几个命令，就可以轻松的利用vundle管理vim插件了，插件都存放在&lt;code&gt;~/.vim/bundle/&lt;/code&gt;目录下。&lt;/p&gt;
+
+&lt;p&gt;主要参考了vundle readme和beiyuu的vimrc，谢谢贡献！&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 31 Jan 2015 16:39:19 +0800</pubDate>
+        <link>http://daqiuqu.com/blog/vundle/vim/swift/2015/01/31/manage-vim-plugin-by-vundle.html</link>
+        <guid isPermaLink="true">http://daqiuqu.com/blog/vundle/vim/swift/2015/01/31/manage-vim-plugin-by-vundle.html</guid>
+        
+        
+        <category>vundle</category>
+        
+        <category>vim</category>
+        
+        <category>swift</category>
+        
+      </item>
     
       <item>
         <title>how to build a blog by github and jekyll!</title>
