@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-01-26 22:28:35
-categories: jekyll update
+title:  "利用vundle管理vim插件!"
+date:   2015-01-31 08:39:19
+categories: vundle vim swift
 ---
 
 想用vim来看swift代码，但是没有swift语法高亮，查了下可以用插件解决，而vim下管理插件的神器要数vundle了，vundle也就是vim bundle。
